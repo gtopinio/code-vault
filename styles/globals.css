@@ -16,7 +16,7 @@
 }
 
 .mainContent {
-  @apply flex justify-center p-3.5;
+  @apply flex flex-col justify-center p-3.5;
 }
 
 .headerText {
@@ -27,6 +27,27 @@
   @apply mt-5 text-lg text-slate-100 sm:text-xl max-w-xl;
 }
 
+.logoText {
+  @apply max-sm:hidden mt-2 font-semibold text-2xl tracking-wide;
+}
+
 .indigo_gradient {
   @apply bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 bg-clip-text text-transparent;
+}
+
+.btnGreen {
+  @apply rounded-full hover:bg-cyan-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-bold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
+}
+
+.dropdown {
+  @apply animate-fadeInOut absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-emerald-300 min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+
+.dropDownLink {
+  @apply text-sm text-black hover:text-gray-700 font-semibold transition duration-700 ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
 }

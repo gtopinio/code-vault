@@ -1,4 +1,6 @@
 import '@styles/globals.css';
+import Nav from '@components/Nav';
+import Provider from '@components/Provider';
 
 export const metadata = {
     title: "CodeVault",
@@ -15,6 +17,7 @@ const RootLayout:React.FC<RootLayoutProps> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
         <body className='bodyContent bodyColor'>
             <main className='mainContent'>
+                <Nav/>
                 {children}
             </main>
         </body>
