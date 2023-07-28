@@ -39,6 +39,10 @@
   @apply rounded-full hover:bg-green-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-semibold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
 }
 
+.btnBorderBlack {
+  @apply rounded-full bg-white border border-black py-1.5 px-5 text-black hover:bg-red-400 hover:text-black text-center text-sm flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
+}
+
 .dropdown {
   @apply animate-fadeInOut absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-emerald-300 min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
