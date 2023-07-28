@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         'mirage-gray': '#1e1e20',
         'smokey-gray': '#3a3a3a',
+        'lime-green': '#2fff63',
       },
     },
     plugins: [],
