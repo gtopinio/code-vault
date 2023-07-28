@@ -28,7 +28,7 @@
 }
 
 .logoText {
-  @apply max-sm:hidden mt-2 font-semibold text-2xl tracking-wide;
+  @apply max-sm:hidden ml-3 font-semibold text-2xl hover:scale-110 transition duration-700 ease-in-out tracking-wide;
 }
 
 .indigo_gradient {
@@ -36,7 +36,7 @@
 }
 
 .btnGreen {
-  @apply rounded-full hover:bg-cyan-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-bold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
+  @apply rounded-full hover:bg-cyan-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-semibold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
 }
 
 .dropdown {

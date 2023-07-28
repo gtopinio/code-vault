@@ -29,7 +29,7 @@ const Nav = () => {
           width={50}
           height={50}
           unoptimized={true}
-          className='object-contain'
+          className='object-contain sm:-mt-7'
         />
         <p className='logoText'>CodeVault</p>
       </Link>
