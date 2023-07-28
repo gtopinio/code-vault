@@ -6,3 +6,16 @@
 
 /* TailwindCSS Styles */
 
+.bodyContent {
+  font-family: 'Sora', sans-serif;
+  color: rgb(47, 255, 99);
+  background-color: #1e1e20;
+}
+
+.bodyColor {
+  @apply bg-mirage-gray;
+}
+
+.mainContent {
+  @apply flex justify-center;
+}
