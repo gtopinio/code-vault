@@ -9,9 +9,11 @@ const Home = () => {
           Robust Passwords
         </span>
 
-        <p className="descText text-center">
+        <div className="flex flex-row justify-center">
+          <h3 className="descText text-center">
           Code Vault is a secure and convenient password manager and generator app. It allows you to generate strong passwords, store them safely, and manage all your login credentials in one place.
-        </p>
+          </h3>
+        </div>
 
         {/* Feed Section */}
     </section>
