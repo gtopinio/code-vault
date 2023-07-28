@@ -101,7 +101,7 @@ const Nav = () => {
 
                 <button 
                 type='button'
-                className='btnGreen mt-3 w-full'
+                className='btnBorderBlack mt-3 w-full'
                 onClick={() => {
                   setToggleDropdown(false);
                   signOut();

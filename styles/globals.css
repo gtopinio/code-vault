@@ -44,11 +44,11 @@
 }
 
 .dropdown {
-  @apply animate-fadeInOut absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-emerald-300 min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply animate-fadeInOut absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-gradient-to-r from-blue-300 via-green-200 to-yellow-300 min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
 .dropDownLink {
-  @apply text-sm text-black hover:text-gray-700 font-semibold transition duration-700 ease-in-out;
+  @apply text-sm text-black hover:text-gray-700 font-semibold hover:scale-110 transition duration-700 ease-in-out;
 }
 
 @keyframes fadeInOut {
