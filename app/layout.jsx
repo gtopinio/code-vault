@@ -7,19 +7,18 @@ export const metadata = {
     description: "Generate and Manage Encrypted Passwords",
 }
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
 
-const RootLayout:React.FC<RootLayoutProps> = ({ children }) => {
+const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
         <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
         <body className='bodyContent bodyColor'>
+          <Provider>
             <main className='mainContent'>
                 <Nav/>
                 {children}
             </main>
+          </Provider>
         </body>
     </html>
   )
