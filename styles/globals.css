@@ -36,7 +36,7 @@
 }
 
 .btnGreen {
-  @apply rounded-full hover:bg-cyan-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-semibold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
+  @apply rounded-full hover:bg-green-300 bg-cyan-500 py-1.5 px-5 text-black text-center text-sm font-semibold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
 }
 
 .dropdown {
