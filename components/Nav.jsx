@@ -6,18 +6,18 @@ import { useState, useEffect, use } from 'react';
 import { signIn, signOut, useSession, getProviders, ClientSafeProvider } from 'next-auth/react';
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  const { data: session } = useSession();
   
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
       setProviders(response);
     }
 
-    fetchData();
+    setUpProviders();
   },[]);
   
   return (
@@ -29,16 +29,16 @@ const Nav = () => {
           width={50}
           height={50}
           unoptimized={true}
-          className='object-contain sm:-mt-7'
+          className='object-contain sm:-mt-4'
         />
         <p className='logoText'>CodeVault</p>
       </Link>
 
       {/* Desktop Navigation */}
       <div className='flex max-sm:hidden'>
-        {isUserLoggedIn ? ( // Signed-in Desktop
+        {session?.user ? ( // Signed-in Desktop
           <div className='flex gap-3 md:gap-5'>
-              <Link href="/generate-password" className='btnGreen'>
+              <Link href="/generate-password" className='btnCyan'>
                 Generate Password
               </Link>
 
@@ -60,7 +60,7 @@ const Nav = () => {
               <button
                 key={provider.id}
                 type='button'
-                className='btnGreen'
+                className='btnCyan'
                 onClick={() => signIn(provider.id)}
               >
                 Sign In
@@ -73,7 +73,7 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <div className='sm:hidden flex relative'>
-        {isUserLoggedIn ? (// Signed-in Mobile
+        {session?.user ? (// Signed-in Mobile
           <div className='flex'>
             <div className='fill-cyan-500 hover:fill-cyan-300 hover:scale-110 transition duration-700 ease-in-out'>
               <button onClick={() => setToggleDropdown((prev)=> !prev)}>
@@ -121,7 +121,7 @@ const Nav = () => {
                 <button
                   key={provider.id}
                   type='button'
-                  className='btnGreen'
+                  className='btnCyan'
                   onClick={() => signIn(provider.id)}
                 >
                   Sign In
