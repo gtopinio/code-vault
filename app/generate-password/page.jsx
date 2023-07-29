@@ -21,7 +21,7 @@ const GeneratePassword = () => {
         setsubmitting(true);
 
         try {
-            const response = await fetch('/api/passwords/new',
+            const response = await fetch('/api/password/new',
             {
                 method: 'POST',
                 body: JSON.stringify({
