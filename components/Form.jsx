@@ -15,7 +15,6 @@ const Form = ({
 }) => {
 
   const [serviceSuggestions, setServiceSuggestions] = useState([]);
-  const [categorySuggestions, setCategorySuggestions] = useState([])
 
   const serviceCategories = [
     'Social Media', 'Email', 'Entertainment', 'Shopping', 'Finance', 'Messaging', 'Productivity', 'Other'
@@ -28,21 +27,6 @@ const Form = ({
     'TikTok', 'Snapchat', 'Pinterest', 'Reddit', 'Tumblr', 'WhatsApp', 
     'Telegram', 'Discord', 'Zoom', 'Slack', 'Microsoft Teams', 'Skype', 'Adobe'
   ];
-
-  const searchCategory = (event) => {
-    setTimeout(() => {
-        let filteredCategories;
-        if (!event.query.trim().length) {
-            filteredCategories = [...serviceCategories];
-        }
-        else {
-            filteredCategories = serviceCategories.filter((category) => {
-                return category.toLowerCase().startsWith(event.query.toLowerCase());
-            });
-        }
-        setCategorySuggestions(filteredCategories);
-      })};
-
 
   const searchService = (event) => {
     setTimeout(() => {
