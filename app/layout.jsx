@@ -3,6 +3,7 @@ import Nav from '@components/Nav';
 import Provider from '@components/Provider';
 import 'primereact/resources/themes/soho-dark/theme.css';  
 import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 export const metadata = {
     title: "CodeVault",
