@@ -17,7 +17,31 @@ const GeneratePassword = () => {
     );
 
     const createPassword = async (e) => {
-    
+        e.preventDefault();
+        setsubmitting(true);
+
+        try {
+            const response = await fetch('/api/passwords/new',
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    userId: session?.user.id,
+                    password: post.password,
+                    serviceName: post.serviceName,
+                    category: post.category,
+                }),
+            });
+
+            if(response){
+                router.push('/');
+            }
+
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setsubmitting(false);
+        }
+
     }
 
     return (
