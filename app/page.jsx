@@ -7,7 +7,7 @@ const Home = () => {
           Generate & Manage
         </h1>
 
-        <span className="headerText text-center indigo_gradient">
+        <span className="headerText text-center indigoGradient">
           Robust Passwords
         </span>
 

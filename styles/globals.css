@@ -31,8 +31,12 @@
   @apply max-sm:hidden ml-1 font-semibold text-2xl hover:scale-110 transition duration-700 ease-in-out tracking-wide;
 }
 
-.indigo_gradient {
+.indigoGradient {
   @apply bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 bg-clip-text text-transparent;
+}
+
+.yellowGradient {
+  @apply bg-gradient-to-b from-orange-500 to-yellow-300 bg-clip-text text-transparent;
 }
 
 .btnCyan {
@@ -49,6 +53,18 @@
 
 .dropDownLink {
   @apply text-sm text-black hover:text-gray-700 font-semibold hover:scale-110 transition duration-700 ease-in-out;
+}
+
+.glassmorphism {
+  @apply rounded-2xl border border-white/25 bg-cyan-950 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.cancelButton {
+  @apply text-sm bg-mirage-gray p-3 rounded-full hover:scale-110 hover:bg-red-500 transition duration-700 ease-in-out;
+}
+
+.submitButton {
+  @apply text-sm text-white bg-orange-600 p-3 rounded-full hover:scale-110 transition duration-700 ease-in-out;
 }
 
 @keyframes fadeInOut {
