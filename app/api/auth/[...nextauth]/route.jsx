@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { connectToDB } from "@utils/database";
 import User from "@models/user";
 
+// Next API Authenticated Route to create a new user using Google OAuth
 const handler = NextAuth({
     providers: [
         GoogleProvider({
