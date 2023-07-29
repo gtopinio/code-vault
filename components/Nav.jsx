@@ -29,7 +29,7 @@ const Nav = () => {
           width={50}
           height={50}
           unoptimized={true}
-          className='object-contain sm:-mt-4'
+          className='object-contain sm:-mt-4 hover:scale-110 transition duration-700 ease-in-out'
         />
         <p className='logoText'>CodeVault</p>
       </Link>
