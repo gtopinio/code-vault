@@ -11,8 +11,8 @@ export const connectToDB = async () => {
     }
 
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
-            dbName: "generate_password",
+        await mongoose.connect(process.env.MONGODB_URI, {
+            dbName: "code-vault",
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
