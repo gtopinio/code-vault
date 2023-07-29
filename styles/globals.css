@@ -67,6 +67,19 @@
   @apply text-sm text-white bg-orange-600 p-3 rounded-full hover:scale-110 transition duration-700 ease-in-out;
 }
 
+.feed {
+  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+}
+
+.searchInput {
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+}
+
+.passwordLayout {
+  @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
+}
+
+
 @keyframes fadeInOut {
   0% { opacity: 0; }
   50% { opacity: 1; }
