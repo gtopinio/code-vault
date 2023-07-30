@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-import bcrypt from "bcrypt";
 
 const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState('');
