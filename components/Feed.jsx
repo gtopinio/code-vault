@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react"
+import { useSession } from "next-auth/react"
 
 import PasswordCard from "@components/PasswordCard";
 
@@ -20,6 +21,7 @@ const PasswordCardList = ({ data, handleTagClick }) => {
 
 
 const Feed = () => {
+  const { data: session } = useSession();
 
   const [searchText, setSearchText] = useState('');
   const [passwords, setPasswords] = useState([]);
@@ -29,7 +31,7 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPasswords = async () => {
-      const response = await fetch('/api/password');
+      const response = await fetch(`/api/users/${session?.user.id}/passwords`);
       const data = await response.json();
 
       setPasswords(data);
