@@ -37,10 +37,10 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
             unoptimized={true}
           />
           <div className="flex flex-col">
-            <h3 className="font-semibold text-gray-900">
-              {password.creator.username}
+            <h3 type className="font-semibold text-zinc-900">
+              {password.creator.username.replace(" ", "").toLowerCase()}
             </h3>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-300">
               {password.creator.email}
             </p>
           </div>
@@ -53,9 +53,11 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
       </div>
 
         <div className="mt-3">
-          <p className="truncate blur-sm">{password.encryptedPassword}</p>
-          <p className="mt-3">{password.serviceName}</p>
-          <p>#{password.category.replace(" ","").toLowerCase()}</p>
+          <p className="truncate blur-sm select-none">{password.encryptedPassword}</p>
+          <p className="my-3 text-3xl font-bold horizonGradient">{password.serviceName}</p>
+          <p className="cursor-pointer" onClick={()=>{
+            handleTagClick && handleTagClick(password.category)
+          }}>#{password.category.replace(" ","").toLowerCase()}</p>
         </div>
 
     </div>

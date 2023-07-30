@@ -39,6 +39,10 @@
   @apply bg-gradient-to-b from-orange-500 to-yellow-300 bg-clip-text text-transparent;
 }
 
+.horizonGradient {
+  @apply  bg-gradient-to-b from-orange-500 to-yellow-300 bg-clip-text text-transparent;
+}
+
 .btnCyan {
   @apply rounded-full hover:bg-green-300 bg-cyan-500 py-3 px-5 text-black text-center text-sm font-semibold flex items-center justify-center hover:scale-110 transition duration-700 ease-in-out;
 }
