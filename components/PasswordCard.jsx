@@ -18,6 +18,8 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
 
     setCopied(decryptedPassword);
 
+    navigator.clipboard.writeText(decryptedPassword);
+
     // Set icon to checkmark
     setCopyIcon('pi pi-check');
 
