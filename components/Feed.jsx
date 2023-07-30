@@ -6,7 +6,7 @@ import PasswordCard from "@components/PasswordCard";
 
 const PasswordCardList = ({ data, handleTagClick }) => {
   return (
-    <div className="mt-16 passwordLayout">
+    <div className="mt-16 passwordLayout max-md:flex max-md:flex-col max-md:justify-center max-md:items-center ">
       {data.map((password) => (
         <PasswordCard
           key={password._id}
@@ -52,6 +52,9 @@ const Feed = () => {
             required
           >
           </input>
+          <div className="flex flex-col justify-center ml-2.5">
+            <span className="pi pi-search cursor-pointer"></span>
+          </div>
       </form>
 
       <PasswordCardList
