@@ -6,7 +6,9 @@ export const GET = async ( req, { params } ) => {
     try {
         await connectToDB();
 
-        const passwords = await Password.find({}).populate("creator");
+        const passwords = await Password.find({
+            creator: params.id
+        }).populate("creator");
 
         return new Response(JSON.stringify(passwords), { status: 200 });
         
