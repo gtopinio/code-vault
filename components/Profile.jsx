@@ -13,8 +13,8 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
         <PasswordCard
           key={password._id}
           password={password}
-          handleEdit={handleEdit && handleEdit(password)}  
-          handleDelete={handleDelete && handleDelete(password)}     
+          handleEdit={()=>{handleEdit(password)}}  
+          handleDelete={() => handleDelete(password)}     
         />
       ))}
     </div>

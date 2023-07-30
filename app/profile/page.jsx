@@ -8,16 +8,19 @@ import Profile from "@components/Profile";
 
 const MyProfile = () => {
 
+    const router = useRouter();
+
     const { data: session } = useSession();
     
     const [passwords, setPasswords] = useState([]);
 
-    const handleEdit = () => {
-
+    const handleEdit = (password) => {
+        router.push(`/update-password?id=${password._id}`);
+        console.log(password);
     };
 
-    const handleDelete = async () => {
-      
+    const handleDelete = async (password) => {
+
     };
 
     useEffect(() => {

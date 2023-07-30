@@ -68,10 +68,10 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
 
           {session?.user.id === password.creator._id && pathName === "/profile" && (
             <div className="flex flex-row justify-end items-end">
-              <div className="editBtn mr-3">
+              <div className="editBtn mr-3" onClick={handleEdit}>
                 <span className="pi pi-file-edit"></span>
               </div>
-              <div className="deleteBtn">
+              <div className="deleteBtn" onClick={handleDelete}>
                 <span className="pi pi-trash deleteIcon"></span>
               </div>
             </div>

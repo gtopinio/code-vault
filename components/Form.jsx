@@ -9,7 +9,7 @@ import { Dropdown } from 'primereact/dropdown';
 const Form = ({
   type,
   post,
-  setpost,
+  setPost,
   submitting,
   handleSubmit,
 }) => {
@@ -69,7 +69,7 @@ const Form = ({
                 className="mt-5 text-white"
                 value={post.password}
                 onChange={(e) => {
-                  setpost({
+                  setPost({
                     ...post,
                     password: e.target.value
                   })
@@ -92,7 +92,7 @@ const Form = ({
               completeMethod={searchService}
               required
               onChange={(e) => {
-                setpost({
+                setPost({
                   ...post,
                   // Sentence case the e.target.value
                   serviceName: e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)
@@ -113,7 +113,7 @@ const Form = ({
               options={serviceCategories}
               required
               onChange={(e) => {
-                setpost({
+                setPost({
                   ...post,
                   // Sentence case the e.target.value
                   category: e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1)

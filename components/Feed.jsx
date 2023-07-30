@@ -31,11 +31,16 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPasswords = async () => {
+      if(!session?.user.id) return;
+
       const response = await fetch(`/api/users/${session?.user.id}/passwords`);
+
+      // const response = await fetch(`/api/password`);
       const data = await response.json();
 
       // Check status code
       if(data.statusCode === 500){
+        console.log("Error fetching passwords")
         setPasswords([]);
       } else {
         setPasswords(data);

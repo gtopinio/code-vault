@@ -11,7 +11,7 @@ const GeneratePassword = () => {
     const { data: session } = useSession();
 
     const [submitting, setsubmitting] = useState(false);
-    const [post, setpost] = useState(
+    const [post, setPost] = useState(
         {
             password: '',
             serviceName: '',
@@ -54,7 +54,7 @@ const GeneratePassword = () => {
             <Form
                 type="Generate"
                 post={post}
-                setpost={setpost}
+                setPost={setPost}
                 submitting={submitting}
                 handleSubmit={createPassword}
             />
