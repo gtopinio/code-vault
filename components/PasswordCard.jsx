@@ -8,6 +8,8 @@ import { decrypt } from "@utils/crypto";
 
 const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
 
   const [copied, setCopied] = useState('');
   const [copyIcon, setCopyIcon] = useState('pi pi-copy');
@@ -63,6 +65,19 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
           <p className="cursor-pointer" onClick={()=>{
             handleTagClick && handleTagClick(password.category)
           }}>#{password.category.replace(" ","").toLowerCase()}</p>
+
+          {session?.user.id === password.creator._id && pathName === "/profile" && (
+            <div className="flex flex-row justify-end items-end">
+              <div className="editBtn mr-3">
+                <span className="pi pi-file-edit"></span>
+              </div>
+              <div className="deleteBtn">
+                <span className="pi pi-trash deleteIcon"></span>
+              </div>
+            </div>
+          )
+            
+          }
         </div>
 
     </div>

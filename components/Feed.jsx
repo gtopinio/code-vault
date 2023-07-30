@@ -34,7 +34,12 @@ const Feed = () => {
       const response = await fetch(`/api/users/${session?.user.id}/passwords`);
       const data = await response.json();
 
-      setPasswords(data);
+      // Check status code
+      if(data.statusCode === 500){
+        setPasswords([]);
+      } else {
+        setPasswords(data);
+      }
     }
 
     fetchPasswords();
@@ -42,27 +47,33 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex justify-center">
-          <input
-            type="text"
-            className="searchInput"
-            placeholder="Search for a Code Vault password..."
-            value={searchText}
-            onChange={(e) => {
-              handleSearchChange
-            }}
-            required
-          >
-          </input>
-          <div className="flex flex-col justify-center ml-2.5">
-            <span className="pi pi-search cursor-pointer"></span>
-          </div>
-      </form>
+      {session?.user.id && passwords.length > 0 ? (
+        <div>
+            <form className="relative w-full flex justify-center">
+                <input
+                  type="text"
+                  className="searchInput"
+                  placeholder="Search for a Code Vault password..."
+                  value={searchText}
+                  onChange={(e) => {
+                    handleSearchChange
+                  }}
+                  required
+                >
+                </input>
+                <div className="flex flex-col justify-center ml-2.5">
+                  <span className="pi pi-search cursor-pointer"></span>
+                </div>
+            </form>
 
-      <PasswordCardList
-          data={passwords}
-          handleTagClick={()=>{}}
-      />
+            <PasswordCardList
+                data={passwords}
+                handleTagClick={()=>{}}
+            />
+            </div>
+      ) : (
+        <></>
+      )}
     </section>
   )
 }

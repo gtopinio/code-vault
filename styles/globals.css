@@ -88,7 +88,15 @@
 }
 
 .copyBtn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer  hover:scale-110 transition duration-700 ease-in-out;
+  @apply hover:bg-green-500 w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer  hover:scale-110 transition duration-700 ease-in-out;
+}
+
+.editBtn {
+  @apply hover:bg-cyan-500 w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer hover:scale-110 transition duration-700 ease-in-out;
+}
+
+.deleteBtn {
+  @apply hover:bg-red-500 w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer hover:scale-110 transition duration-700 ease-in-out;
 }
 
 .flex-center {
