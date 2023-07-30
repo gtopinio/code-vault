@@ -12,9 +12,13 @@ const MyProfile = () => {
     
     const [passwords, setPasswords] = useState([]);
 
-    const handleEdit = () => {};
+    const handleEdit = () => {
 
-    const handleDelete = async () => {};
+    };
+
+    const handleDelete = async () => {
+      
+    };
 
     useEffect(() => {
         const fetchPasswords = async () => {

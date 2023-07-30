@@ -75,9 +75,7 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
                 <span className="pi pi-trash deleteIcon"></span>
               </div>
             </div>
-          )
-            
-          }
+          )}
         </div>
 
     </div>
