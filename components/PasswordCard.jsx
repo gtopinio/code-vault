@@ -4,15 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import bcrypt from "bcrypt";
 
 const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState('');
   const [copyIcon, setCopyIcon] = useState('pi pi-copy');
   
   const handleCopyClick = () => {
-    // Copy logic
+    // Unhash the 
 
-    setCopied(true);
+    setCopied('');
 
     // Set icon to checkmark
     setCopyIcon('pi pi-check');

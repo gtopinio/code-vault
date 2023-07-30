@@ -1,6 +1,6 @@
 import { connectToDB } from "@utils/database";
 import Password from "@models/password";
-import bcrypt from "bcrypt";
+import { encrypt } from "@utils/crypto";
 
 export const POST = async ( req ) => {
     const { userId, password, serviceName, category } = await req.json();
@@ -8,9 +8,8 @@ export const POST = async ( req ) => {
     try {
         await connectToDB();
         
-        // Hash the password using bcryptjs
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        // Encrypt the password using crypto
+        const hashedPassword = encrypt(password);
 
         const newPassword = new Password({
             creator: userId,
