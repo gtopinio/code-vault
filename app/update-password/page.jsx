@@ -31,7 +31,7 @@ const EditPassword = () => {
             const data = await response.json();
             const key = await session?.user._keyArray;
             const iv = await session?.user._ivArray;
-            const decryptedPassword = await decrypt(data.password, key, iv);
+            const decryptedPassword = await decrypt(data.encryptedPassword, key, iv);
 
             setPost({
                 password: decryptedPassword,
