@@ -1,9 +1,8 @@
 import crypto from 'crypto';
 
-const algorithm = 'aes-256-cbc'; // You can choose a different algorithm if needed
-const key = process.env.GOOGLE_CLIENT_SECRET
-const iv = crypto.randomBytes(16); // Generate a random IV (Initialization Vector)
-
+const algorithm = 'aes-256-cbc';
+const key = crypto.randomBytes(32); // Generate a random key of 32 bytes (256 bits)
+const iv = crypto.randomBytes(16);
 
 function encrypt(text) {
     const cipher = crypto.createCipheriv(algorithm, key, iv);
