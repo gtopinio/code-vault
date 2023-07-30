@@ -24,6 +24,7 @@ const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) =>
     setCopyIcon('pi pi-check');
 
     setTimeout(() => {
+      setCopied('');
       setCopyIcon('pi pi-copy');
     }, 1500); // Change back to copy icon after 1.5 seconds
   };
