@@ -4,15 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import { decrypt } from "@utils/crypto";
 
 const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState('');
   const [copyIcon, setCopyIcon] = useState('pi pi-copy');
   
   const handleCopyClick = () => {
-    // Unhash the 
+    // Unhash the password using crypto utils
+    const decryptedPassword = decrypt(password.encryptedPassword);
 
-    setCopied('');
+    setCopied(decryptedPassword);
+    console.log(decryptedPassword)
 
     // Set icon to checkmark
     setCopyIcon('pi pi-check');
