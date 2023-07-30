@@ -4,45 +4,55 @@ import { Schema, model, models } from 'mongoose';
 
 const UserSchema = new Schema({
     username: {
-    type: String,
-    required: [true, 'Username is required!'],
-    unique: [true, 'Username already exists!'],
+        type: String,
+        required: [true, 'Username is required!'],
+        unique: [true, 'Username already exists!'],
     },
 
     email: {
-    type: String,
-    required: [true, 'Email is required!'],
-    unique: [true, 'Email already exists!'],
+        type: String,
+        required: [true, 'Email is required!'],
+        unique: [true, 'Email already exists!'],
     },
 
     accountStatus: {
-    type: String,
-    enum: ['active', 'inactive', 'suspended'],
-    default: 'active',
+        type: String,
+        enum: ['active', 'inactive', 'suspended'],
+        default: 'active',
     },
 
     image: {
-    type: String,
+        type: String,
     },
 
+    _keyArray: {
+            type: Object,
+            required: [true, 'Key array is required!'],
+    },
+
+    _ivArray: {
+        type: Object,
+        required: [true, 'IV array is required!'],
+    },
+    
     _dateCreated: {
-    type: Date,
-    default: Date.now,
+        type: Date,
+        default: Date.now,
     },
 
     _dateModified: {
-    type: Date,
-    default: Date.now,
+        type: Date,
+        default: Date.now,
     },
 
     _modifiedBy: {
-    type: String,
-    default: null,
+        type: String,
+        default: null,
     },
 
     _deleted: {
-    type: Boolean,
-    default: false,
+        type: Boolean,
+        default: false,
     },
 });
 

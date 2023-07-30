@@ -32,6 +32,8 @@ const GeneratePassword = () => {
                     password: post.password,
                     serviceName: post.serviceName,
                     category: post.category,
+                    key: session?.user._keyArray,
+                    iv: session?.user._ivArray,
                 }),
             });
 

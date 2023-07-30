@@ -7,24 +7,23 @@ import { usePathname, useRouter } from "next/navigation";
 import { decrypt } from "@utils/crypto";
 
 const PasswordCard = ({ password, handleTagClick, handleEdit, handleDelete }) => {
+  const { data: session } = useSession();
+
   const [copied, setCopied] = useState('');
   const [copyIcon, setCopyIcon] = useState('pi pi-copy');
   
   const handleCopyClick = () => {
     // Unhash the password using crypto utils
-    const decryptedPassword = decrypt(password.encryptedPassword);
+    const decryptedPassword = decrypt(password.encryptedPassword, session?.user._keyArray, session?.user._ivArray);
 
     setCopied(decryptedPassword);
-    console.log(decryptedPassword)
 
     // Set icon to checkmark
     setCopyIcon('pi pi-check');
-    console.log('Copied to clipboard!');
 
     setTimeout(() => {
-      setCopied(false);
       setCopyIcon('pi pi-copy');
-    }, 1500); // Reset to false and change back to copy icon after 1.5 seconds
+    }, 1500); // Change back to copy icon after 1.5 seconds
   };
   
   return (
