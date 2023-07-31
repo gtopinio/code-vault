@@ -3,11 +3,12 @@ import { Password } from 'primereact/password';
 import { AutoComplete } from 'primereact/autocomplete';
 import { Dropdown } from 'primereact/dropdown';
 import { useState } from "react";
+import { generateRandomPassword } from "@utils/generate-pw";
 
 const Generator = () => {
 
     const [password, setPassword] = useState({
-        value: '',
+        value: generateRandomPassword(),
         serviceName: '',
         category: '',
     });
@@ -42,11 +43,10 @@ const Generator = () => {
         })};
 
     const handleRandomizeButton = () => {
-        // Generate random string
-        const randomString = Math.random().toString(36).slice(-8)
+        // Generate random string using generateRandomPassword()
         setPassword({
             ...password,
-            value: randomString,
+            value: generateRandomPassword(),
         })
     }
 
