@@ -7,11 +7,9 @@ export const POST = async ( req, { params } ) => {
 
         const { userId, queryText } = await req.json();
 
-        // Find all passwords using the following details:
-        // 1. The user ID
-        // 2. The category
-        // 3. The service name
+        // Search by service name for now
 
+        // If the query text is empty, return all passwords from that user
         if(queryText === "" || queryText === undefined || queryText === queryText.replace(/\s/g, "") == ""){
             const allPasswords = await Password.find({
                 creator: userId,
