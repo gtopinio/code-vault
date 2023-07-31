@@ -16,7 +16,6 @@ const MyProfile = () => {
 
     const handleEdit = (password) => {
         router.push(`/update-password?id=${password._id}`);
-        console.log(password);
     };
 
     const handleDelete = async (password) => {

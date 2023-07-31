@@ -11,7 +11,7 @@ const PasswordCardList = ({ data, handleTagClick }) => {
       {data.map((password) => (
         <PasswordCard
           key={password._id}
-          password={password}
+          password={password ? password : null}
           handleTagClick={handleTagClick}        
         />
       ))}
@@ -29,24 +29,19 @@ const Feed = () => {
   const handleSearchChange = (e) => {
   }
 
+  const fetchPasswords = async () => {
+    
+    if(!session?.user.id) return;
+
+    const response = await fetch(`/api/users/${session?.user.id}/passwords`);
+
+    // const response = await fetch(`/api/password`);
+    const data = await response.json();
+
+    setPasswords(data);
+  }
+
   useEffect(() => {
-    const fetchPasswords = async () => {
-      if(!session?.user.id) return;
-
-      const response = await fetch(`/api/users/${session?.user.id}/passwords`);
-
-      // const response = await fetch(`/api/password`);
-      const data = await response.json();
-
-      // Check status code
-      if(data.statusCode === 500){
-        console.log("Error fetching passwords")
-        setPasswords([]);
-      } else {
-        setPasswords(data);
-      }
-    }
-
     fetchPasswords();
   }, []);
 
