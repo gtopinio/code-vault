@@ -39,7 +39,7 @@ const Nav = () => {
         {session?.user ? ( // Signed-in Desktop
           <div className='flex gap-3 md:gap-5'>
               <Link href="/generate-password" className='btnCyan'>
-                Generate Password
+                Generate Custom Password
               </Link>
 
               <button type='button' className='btnBorderBlack' onClick={() => { signOut(); }}>

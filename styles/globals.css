@@ -68,7 +68,7 @@
 }
 
 .submitButton {
-  @apply text-sm text-white bg-orange-600 p-3 rounded-full hover:scale-110 transition duration-700 ease-in-out;
+  @apply text-sm text-white bg-orange-600 pt-3 pb-3 pr-5 pl-5 rounded-full hover:scale-110 transition duration-700 ease-in-out;
 }
 
 .feed {
