@@ -21,9 +21,9 @@ const Form = ({
   ];
 
   const services = [
-    'Google', 'Facebook', 'Twitter', 'Instagram', 
-    'LinkedIn', 'GitHub', 'Amazon', 'Apple', 'Microsoft', 
-    'Yahoo', 'Netflix', 'Spotify', 'Twitch', 'PayPal', 'GCash', 
+    'Google', 'Facebook', 'Youtube', 'Twitter', 'Instagram', 
+    'LinkedIn', 'GitHub', 'Amazon', 'Apple', 'Microsoft', 'Shopee', 'Lazada', 'Grab', 'FoodPanda', 
+    'Yahoo', 'Netflix', 'Spotify', 'Twitch', 'PayPal', 'GCash', 'Maya', 'LandBank', 'BPO', 'BPI' ,
     'TikTok', 'Snapchat', 'Pinterest', 'Reddit', 'Tumblr', 'WhatsApp', 
     'Telegram', 'Discord', 'Zoom', 'Slack', 'Microsoft Teams', 'Skype', 'Adobe'
   ];
