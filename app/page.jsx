@@ -1,3 +1,4 @@
+import Generator from "@components/Generator"
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
           </h3>
         </div>
 
-        
+        <Generator/>
     </section>
   )
 }

@@ -99,6 +99,10 @@
   @apply hover:bg-red-500 w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer hover:scale-110 transition duration-700 ease-in-out;
 }
 
+.randomizeBtn {
+  @apply hover:bg-yellow-500 w-[3.5rem] h-[3.5rem] rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer hover:scale-110 transition duration-700 ease-in-out;
+}
+
 .flex-center {
   @apply flex justify-center items-center;
 }
