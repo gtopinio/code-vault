@@ -55,6 +55,10 @@ const MyProfile = () => {
         }
     };
 
+    const handleUpdatePasswords = (passwords) => {
+      setPasswords(passwords);
+    }
+
     useEffect(() => {
         if(session?.user.id){
             fetchPasswords();
@@ -69,6 +73,7 @@ const MyProfile = () => {
             data={passwords} // For the array of passwords
             handleEdit={handleEdit}
             handleDelete={handleDelete}
+            handleUpdatePasswords={handleUpdatePasswords}
         />
     )
 }

@@ -1,6 +1,6 @@
 import Feed from "@components/Feed";
 
-const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
+const Profile = ({ name, desc, data, handleEdit, handleDelete, handleUpdatePasswords }) => {
   return (
     <section className="w-full">
       <h1 className="headerText text-left">
@@ -11,7 +11,8 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       <Feed
         data={data}
         handleEdit={handleEdit}  
-        handleDelete={handleDelete}  
+        handleDelete={handleDelete}
+        handleUpdatePasswords={handleUpdatePasswords}
       />
 
     </section>
