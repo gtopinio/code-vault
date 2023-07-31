@@ -79,9 +79,9 @@ export const PATCH = async ( req, { params } ) => {
     }
 }
 
-// DELETE - (delete)
+// POST - (delete), post since we're doing hard deletes
 
-export const DELETE = async ( req, { params } ) => {
+export const POST = async ( req, { params } ) => {
 
     const { userId } = await req.json();
 
@@ -101,6 +101,14 @@ export const DELETE = async ( req, { params } ) => {
         existingPassword._deleted = true;
         existingPassword._dateModified = new Date();
         existingPassword._modifiedBy = userId;
+
+        await existingPassword.save();
+
+        return new Response(JSON.stringify
+        (
+            { message: "Password deleted successfully!" }),
+            { status: 200 }
+        );
         
         
     } catch (error) {
