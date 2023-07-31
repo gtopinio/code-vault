@@ -45,35 +45,38 @@ const EditPassword = () => {
         }
     }, [passwordId]);
 
-    // const createPassword = async (e) => {
-    //     e.preventDefault();
-    //     setsubmitting(true);
+    const updatePassword = async (e) => {
+        e.preventDefault();
+        setsubmitting(true);
 
-    //     try {
-    //         const response = await fetch('/api/password/new',
-    //         {
-    //             method: 'POST',
-    //             body: JSON.stringify({
-    //                 userId: session?.user.id,
-    //                 password: post.password,
-    //                 serviceName: post.serviceName,
-    //                 category: post.category,
-    //                 key: session?.user._keyArray,
-    //                 iv: session?.user._ivArray,
-    //             }),
-    //         });
+        if(!passwordId) {
+            alert('Password ID not found');
+        }
 
-    //         if(response){
-    //             router.push('/');
-    //         }
+        try {
+            const response = await fetch(`/api/password/${passwordId}`,
+            {
+                method: 'PATCH',
+                body: JSON.stringify({
+                    password: post.password,
+                    serviceName: post.serviceName,
+                    category: post.category,
+                    key: session?.user._keyArray,
+                    iv: session?.user._ivArray,
+                }),
+            });
 
-    //     } catch (error) {
-    //         console.log(error);
-    //     } finally {
-    //         setsubmitting(false);
-    //     }
+            if(response){
+                router.push('/');
+            }
 
-    // }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setsubmitting(false);
+        }
+
+    }
 
     return (
         <div className="flex justify-center">
@@ -82,7 +85,7 @@ const EditPassword = () => {
                 post={post}
                 setPost={setPost}
                 submitting={submitting}
-                handleSubmit={()=>{}}
+                handleSubmit={updatePassword}
             />
         </div>
     )

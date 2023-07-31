@@ -6,6 +6,7 @@
 
 import { connectToDB } from "@utils/database";
 import Password from "@models/password";
+import { encrypt } from "@utils/crypto";
 
 // GET - (read)
 export const GET = async ( req, { params } ) => {
@@ -38,7 +39,7 @@ export const GET = async ( req, { params } ) => {
 // PATCH - (update)
 
 export const PATCH = async ( req, { params } ) => {
-    const { password, serviceName, category, userId } = await req.json();
+    const { password, serviceName, category, userId, key, iv } = await req.json();
 
     try {
         await connectToDB();
@@ -53,7 +54,10 @@ export const PATCH = async ( req, { params } ) => {
             );
         }
 
-        existingPassword.encryptedPassword = password;
+        // Encrypt the password using crypto
+        const hashedPassword = encrypt(password, key, iv);
+
+        existingPassword.encryptedPassword = hashedPassword;
         existingPassword.serviceName = serviceName;
         existingPassword.category = category;
         existingPassword._dateModified = new Date();
