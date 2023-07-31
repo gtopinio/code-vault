@@ -1,4 +1,4 @@
-import PasswordCard from "./PasswordCard"
+import Feed from "@components/Feed";
 
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
@@ -8,16 +8,11 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p className="descText text-left">{desc}</p>
 
-      <div className="mt-10 grid grid-cols-4 max-md:space-y-6 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center ">
-      {data.map((password) => (
-        <PasswordCard
-          key={password._id}
-          password={password}
-          handleEdit={()=>{handleEdit(password)}}  
-          handleDelete={() => handleDelete(password)}     
-        />
-      ))}
-    </div>
+      <Feed
+        data={data}
+        handleEdit={handleEdit}  
+        handleDelete={handleDelete}  
+      />
 
     </section>
   )

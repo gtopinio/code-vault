@@ -1,18 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useSession } from "next-auth/react"
 
 import PasswordCard from "@components/PasswordCard";
 
-const PasswordCardList = ({ data, handleTagClick }) => {
+const PasswordCardList = ({ data, handleTagClick, handleEdit, handleDelete }) => {
   return (
     <div className="mt-16 passwordLayout max-md:flex max-md:flex-col max-md:justify-center max-md:items-center ">
       {data.map((password) => (
         <PasswordCard
           key={password._id}
           password={password ? password : null}
-          handleTagClick={handleTagClick}        
+          handleTagClick={handleTagClick}
+          handleEdit={()=>{handleEdit(password)}}  
+          handleDelete={() => handleDelete(password)}       
         />
       ))}
     </div>
@@ -20,34 +22,23 @@ const PasswordCardList = ({ data, handleTagClick }) => {
 }
 
 
-const Feed = () => {
+const Feed = (
+  {
+    data,
+    handleEdit,
+    handleDelete
+  }
+) => {
   const { data: session } = useSession();
 
   const [searchText, setSearchText] = useState('');
-  const [passwords, setPasswords] = useState([]);
 
   const handleSearchChange = (e) => {
   }
 
-  const fetchPasswords = async () => {
-    
-    if(!session?.user.id) return;
-
-    const response = await fetch(`/api/users/${session?.user.id}/passwords`);
-
-    // const response = await fetch(`/api/password`);
-    const data = await response.json();
-
-    setPasswords(data);
-  }
-
-  useEffect(() => {
-    fetchPasswords();
-  }, []);
-
   return (
     <section className="feed">
-      {session?.user.id && passwords.length > 0 ? (
+      {session?.user.id && data.length > 0 ? (
         <div>
             <form className="relative w-full flex justify-center">
                 <input
@@ -67,8 +58,10 @@ const Feed = () => {
             </form>
 
             <PasswordCardList
-                data={passwords}
+                data={data}
                 handleTagClick={()=>{}}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
             />
             </div>
       ) : (

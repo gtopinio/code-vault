@@ -1,4 +1,3 @@
-import Feed from "@components/Feed";
 
 const Home = () => {
   return (
@@ -18,7 +17,7 @@ const Home = () => {
           </h3>
         </div>
 
-        <Feed/>
+        
     </section>
   )
 }

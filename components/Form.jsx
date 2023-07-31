@@ -125,7 +125,7 @@ const Form = ({
 
           <div className="flex justify-end mx-3 mb-5 gap-4">
 
-              <Link href="/" className="cancelButton">
+              <Link href="/profile" className="cancelButton">
                 Cancel
               </Link>
 

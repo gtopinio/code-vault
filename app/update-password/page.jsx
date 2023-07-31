@@ -67,7 +67,7 @@ const EditPassword = () => {
             });
 
             if(response){
-                router.push('/');
+                router.push('/profile');
             }
 
         } catch (error) {
