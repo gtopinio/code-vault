@@ -6,7 +6,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 export const metadata = {
-    title: "CodeVault",
+    title: "Code Vault | Generate and Manage Encrypted Passwords",
     description: "Generate and Manage Encrypted Passwords",
 }
 
