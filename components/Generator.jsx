@@ -74,7 +74,7 @@ const Generator = () => {
                 method: 'POST',
                 body: JSON.stringify({
                     userId: session?.user.id,
-                    password: password.password,
+                    password: password.value,
                     serviceName: password.serviceName,
                     category: password.category,
                     key: session?.user._keyArray,
